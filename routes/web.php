@@ -13,11 +13,17 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 Route::post('/signup','UserController@postSignUp')->name('signup');
 
 Route::post('/signin', 'UserController@postSignIn')->name('signin');
 
-Route::get('/dashboard', 'UserController@getDashboard')->name('dashboard');
+Route::get('/logout', 'userController@getLogout')->name('logout');
+
+Route::get('/dashboard', 'PostController@getDashboard')->middleware('auth')->name('dashboard');
+
+Route::post('/createpost', 'PostController@postCreatePost')->middleware('auth')->name('post.create');
+
+Route::get('/delete/{post_id}', 'PostController@getDeletePost')->middleware('auth')->name('post.delete');

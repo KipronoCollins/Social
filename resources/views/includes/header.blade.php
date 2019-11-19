@@ -6,11 +6,16 @@
                 </button>
               
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  
-                  <form class="form-inline my-2 my-lg-0" style="margin-right:0; margin-left:auto;">
+                    
+                  {{-- <form class="form-inline my-2 my-lg-0" style="margin-right:0; margin-left:auto;">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
+                  </form> --}}
+                  <ul class="nav navbar-nav navbar-right" style="margin-right:0; margin-left:auto;">
+                    <li>
+                      <a href=" {{ route('logout') }} ">Logout</a>
+                    </li>
+                  </ul>
                 </div>
               </nav>
 </header>
